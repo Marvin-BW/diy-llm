@@ -4,10 +4,10 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/github/stars/xuhu0115/diy-llm?style=flat&logo=github" alt="GitHub stars"/>
-  <img src="https://img.shields.io/github/forks/xuhu0115/diy-llm?style=flat&logo=github" alt="GitHub forks"/>
+  <img src="https://img.shields.io/github/stars/datawhalechina/diy-llm?style=flat&logo=github" alt="GitHub stars"/>
+  <img src="https://img.shields.io/github/forks/datawhalechina/diy-llm?style=flat&logo=github" alt="GitHub forks"/>
   <img src="https://img.shields.io/badge/language-Chinese-brightgreen?style=flat" alt="Language"/>
-  <a href="https://github.com/xuhu0115/diy-llm"><img src="https://img.shields.io/badge/GitHub-Project-blue?style=flat&logo=github" alt="GitHub Project"></a>
+  <a href="https://github.com/datawhalechina/diy-llm"><img src="https://img.shields.io/badge/GitHub-Project-blue?style=flat&logo=github" alt="GitHub Project"></a>
 </div>
 
 <div align="center">
@@ -46,22 +46,22 @@
 
 | 章节 | 关键内容 | 配套作业 | 状态 |
 |------|----------|----------|------|
-| [前言](docs/前言.md) | 项目由来、背景及学习建议 | - | ✅ |
-| [第1章 工具使用](docs/chapter1) | W&B 使用与实验追踪 | - | 📝 |
-| [第2章 分词器](docs/chapter2/chapter2_分词器.md) | 分词器原理与 BPE 实现 | [作业1](coursework/assignment1-basics/) | ✅ |
-| [第3章 PyTorch 与资源核算](docs/chapter3/) | 训练原语、算力/显存估算 | - | ✅ |
-| [第4章 语言模型架构与训练细节](docs/chapter4/chapter4_第四章语言模型架构和训练的技术细节.md) | Transformer 架构与训练要点 | [作业1](coursework/assignment1-basics/) | ✅ |
-| [第5章 混合专家模型](docs/chapter5/chapter5_混合专家模型.md) | MoE 原理、路由与工程实践 | - | ✅ |
-| [第6章 GPU 与相关优化](docs/chapter6/chapter6_第六章GPU和GPU相关的优化.md) | GPU 基础与优化技巧 | [作业2](coursework/assignment2-systems/) | ✅ |
-| [第7章 GPU 高性能编程](docs/chapter7/chapter7_第七章GPU高性能编程.md) | CUDA 与高性能编程 | [作业2](coursework/assignment2-systems/) | ✅ |
-| [第8章 分布式训练](docs/chapter8/chapter8_第八章分布式训练.md) | 并行范式与跨机训练 | [作业2](coursework/assignment2-systems/) | ✅ |
-| [第9章 Scaling Laws](docs/chapter9/chapter9_Scaling_Laws.md) | 扩展定律与实验 | [作业3](coursework/assignment3-scaling/) | ✅ |
-| [第10章 推理](docs/chapter10/推理.md) | 推理性能与落地优化 | [作业6](coursework/assignment6-evaluation/) | ✅ |
-| [第11章 数据工程](docs/chapter11/chapter11_数据工程.md) | 数据清洗、构建与管理 | [作业4](coursework/assignment4-data/) | ✅ |
-| [第12章 评估与基准测试](docs/chapter12/chapter12_评估与基准测试.md) | 指标体系与评测方法 | [作业6](coursework/assignment6-evaluation/) | ✅ |
-| [第13章 大模型的基本训练流程](docs/chapter13/chapter13_第十三章大模型的基本训练流程.md) | 预训练、SFT、RL 流程 | [作业5](coursework/assignment5-alignment/) | ✅ |
-| [第14章 可验证奖励的强化学习](docs/chapter14/chapter14_可验证奖励的强化学习.md) | RLVR 思想与实践 | [作业5](coursework/assignment5-alignment/) | ✅ |
-| [第15章 扩展内容](docs/chapter15/) | - | - | 🚧 |
+| [前言](前言.md) | 项目由来、背景及学习建议 | - | ✅ |
+| [第1章 工具使用](chapter1) | W&B 使用与实验追踪 | - | 📝 |
+| [第2章 分词器](chapter2/chapter2_分词器.md) | 分词器原理与 BPE 实现 | [作业1](../coursework/assignment1-basics/) | ✅ |
+| [第3章 PyTorch 与资源核算](chapter3/) | 训练原语、算力/显存估算 | - | ✅ |
+| [第4章 语言模型架构与训练细节](chapter4/chapter4_第四章语言模型架构和训练的技术细节.md) | Transformer 架构与训练要点 | [作业1](../coursework/assignment1-basics/) | ✅ |
+| [第5章 混合专家模型](chapter5/chapter5_混合专家模型.md) | MoE 原理、路由与工程实践 | - | ✅ |
+| [第6章 GPU 与相关优化](chapter6/chapter6_第六章GPU和GPU相关的优化.md) | GPU 基础与优化技巧 | [作业2](../coursework/assignment2-systems/) | ✅ |
+| [第7章 GPU 高性能编程](chapter7/chapter7_第七章GPU高性能编程.md) | CUDA 与高性能编程 | [作业2](../coursework/assignment2-systems/) | ✅ |
+| [第8章 分布式训练](chapter8/chapter8_第八章分布式训练.md) | 并行范式与跨机训练 | [作业2](../coursework/assignment2-systems/) | ✅ |
+| [第9章 Scaling Laws](chapter9/chapter9_Scaling_Laws.md) | 扩展定律与实验 | [作业3](../coursework/assignment3-scaling/) | ✅ |
+| [第10章 推理](chapter10/推理.md) | 推理性能与落地优化 | [作业6](../coursework/assignment6-evaluation/) | ✅ |
+| [第11章 数据工程](chapter11/chapter11_数据工程.md) | 数据清洗、构建与管理 | [作业4](../coursework/assignment4-data/) | ✅ |
+| [第12章 评估与基准测试](chapter12/chapter12_评估与基准测试.md) | 指标体系与评测方法 | [作业6](../coursework/assignment6-evaluation/) | ✅ |
+| [第13章 大模型的基本训练流程](chapter13/chapter13_第十三章大模型的基本训练流程.md) | 预训练、SFT、RL 流程 | [作业5](../coursework/assignment5-alignment/) | ✅ |
+| [第14章 可验证奖励的强化学习](chapter14/chapter14_可验证奖励的强化学习.md) | RLVR 思想与实践 | [作业5](../coursework/assignment5-alignment/) | ✅ |
+| [第15章 扩展内容](chapter15/) | - | - | 🚧 |
 
 > 状态图例说明：✅ 已完成  🔄 更新中	📝 待完善	🚧 筹备中	 ⏸️ 暂缓	
 
@@ -70,19 +70,19 @@
 
 | 作业 | 核心任务 |状态 |
 |------|----------|------|
-| [作业1：手搓大模型](coursework/assignment1-basics/) | 实现 tokenizer、model architecture、optimizer，训练一个极简语言模型 | ✅ |
-| [作业2：系统优化](coursework/assignment2-systems/) | 性能分析与基准测试；用 Triton 实现 FlashAttention-2；构建分布式训练代码 | ✅ |
-| [作业3：扩展定律](coursework/assignment3-scaling/) | 理解 Transformer 各组件功能；拟合 scaling law 预测模型扩展效果 | ✅ |
-| [作业4：数据处理](coursework/assignment4-data/) | 将 Common Crawl 原始数据转换为预训练数据集，执行过滤与去重 | ✅ |
-| [作业5：模型对齐](coursework/assignment5-alignment/) | 应用 SFT 与强化学习（如 GRPO）训练模型解决数学问题 | ✅ |
-| [作业6：模型评估](coursework/assignment6-evaluation/) | 使用 lm-evaluation-harness 和 evalscope 进行多维度评测（语言理解、常识推理、代码、数学推理） | ✅ |
+| [作业1：手搓大模型](../coursework/assignment1-basics/) | 实现 tokenizer、model architecture、optimizer，训练一个极简语言模型 | ✅ |
+| [作业2：系统优化](../coursework/assignment2-systems/) | 性能分析与基准测试；用 Triton 实现 FlashAttention-2；构建分布式训练代码 | ✅ |
+| [作业3：扩展定律](../coursework/assignment3-scaling/) | 理解 Transformer 各组件功能；拟合 scaling law 预测模型扩展效果 | ✅ |
+| [作业4：数据处理](../coursework/assignment4-data/) | 将 Common Crawl 原始数据转换为预训练数据集，执行过滤与去重 | ✅ |
+| [作业5：模型对齐](../coursework/assignment5-alignment/) | 应用 SFT 与强化学习（如 GRPO）训练模型解决数学问题 | ✅ |
+| [作业6：模型评估](../coursework/assignment6-evaluation/) | 使用 lm-evaluation-harness 和 evalscope 进行多维度评测（语言理解、常识推理、代码、数学推理） | ✅ |
 
 
 ## 🚀 快速开始
 
 ```bash
 # 克隆仓库
-git clone https://github.com/xuhu0115/diy-llm.git
+git clone https://github.com/datawhalechina/diy-llm.git
 cd CS336-Chinese-co-construction
 # 安装基础依赖（根据具体作业需求安装）
 ```
@@ -126,7 +126,7 @@ CS336-Chinese-co-construction/
 
 ## 🔗 相关链接
 
-- **仓库地址**：https://github.com/xuhu0115/diy-llm
+- **仓库地址**：https://github.com/datawhalechina/diy-llm
 - **在线阅读地址**：https://datawhalechina.github.io/diy-llm/
 - **原版课程主页**：[Stanford CS336 (Spring 2025)](https://stanford-cs336.github.io/spring2025/)
 - **原版课程项目**：https://github.com/stanford-cs336/spring2025-lectures/tree/main
@@ -177,7 +177,7 @@ CS336-Chinese-co-construction/
 
 ### 如何贡献
 
-1. **报告问题**：如果发现文档错误、代码bug或改进建议，欢迎提交 [Issue](https://github.com/xuhu0115/diy-llm/issues)
+1. **报告问题**：如果发现文档错误、代码bug或改进建议，欢迎提交 [Issue](https://github.com/datawhalechina/diy-llm/issues)
 2. **提交代码**：Fork 本仓库，创建你的特性分支，提交更改后发起 Pull Request
 3. **完善文档**：帮助改进文档、翻译内容或添加示例
 4. **分享经验**：在讨论区分享学习心得和实践经验
@@ -193,7 +193,7 @@ CS336-Chinese-co-construction/
 
 ## 📝 更新日志
 
-项目持续更新中，最新进展请查看 [GitHub Releases](https://github.com/xuhu0115/diy-llm/releases) 或提交记录。
+项目持续更新中，最新进展请查看 [GitHub Releases](https://github.com/datawhalechina/diy-llm/releases) 或提交记录。
 
 ## 📄 许可证
 
@@ -212,7 +212,7 @@ CS336-Chinese-co-construction/
 
 如果这个项目对你有帮助，欢迎给个 Star ⭐️！
 
-[![Star History Chart](https://api.star-history.com/svg?repos=xuhu0115/diy-llm&type=Date)](https://star-history.com/#xuhu0115/diy-llm&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=datawhalechina/diy-llm&type=Date)](https://star-history.com/#datawhalechina/diy-llm&Date)
 
 ---
 
