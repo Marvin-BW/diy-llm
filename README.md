@@ -49,7 +49,7 @@
 | [前言](docs/前言.md) | 项目由来、背景及学习建议 | - | ✅ |
 | [第1章 工具使用](docs/chapter1) | W&B 使用与实验追踪 | - | 📝 |
 | [第2章 分词器](docs/chapter2/chapter2_分词器.md) | 分词器原理与 BPE 实现 | [作业1](coursework/assignment1-basics/) | ✅ |
-| [第3章 PyTorch 与资源核算](docs/chapter3/) | 训练原语、算力/显存估算 | - | ✅ |
+| [第3章 PyTorch 与资源核算](docs/chapter3/chapter3_pytorch与资源核算.md) | 训练原语、算力/显存估算 | - | ✅ |
 | [第4章 语言模型架构与训练细节](docs/chapter4/chapter4_第四章语言模型架构和训练的技术细节.md) | Transformer 架构与训练要点 | [作业1](coursework/assignment1-basics/) | ✅ |
 | [第5章 混合专家模型](docs/chapter5/chapter5_混合专家模型.md) | MoE 原理、路由与工程实践 | - | ✅ |
 | [第6章 GPU 与相关优化](docs/chapter6/chapter6_第六章GPU和GPU相关的优化.md) | GPU 基础与优化技巧 | [作业2](coursework/assignment2-systems/) | ✅ |
