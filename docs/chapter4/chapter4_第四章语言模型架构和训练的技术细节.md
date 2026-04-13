@@ -87,7 +87,7 @@ $$
 
 #### 3. 多头注意力的具体计算过程
 
-**第一步：线性投影与切分**
+**第一步：多头切分（假定输入 Q, K, V 已完成线性投影）**
 
 对于输入 $Q, K, V$（形状均为 $[batchSize, seqLen, d_{model}]$），首先将其拆分为 $h$ 个头。通过重塑和转置操作，将头维度提前：
 
@@ -106,7 +106,7 @@ $$
 \text{Head}_i = \text{Attention}(Q_i, K_i, V_i) = \text{softmax}\left(\frac{Q_i K_i^T}{\sqrt{d_k}}\right)V_i
 $$
 
-其中 $Q_i K_i^T$ 的形状为 $[batchSize, h, seqLen, seqLen]$，表示每个头内部所有位置两两之间的注意力分数。每个头的输出 $\text{Head}_i$ 形状为 $[batchSize, h, seqLen, d_k]$。
+其中 $Q_i K_i^T$ 的形状为 $[batchSize, h, seqLen, seqLen]$，表示每个头内部所有位置两两之间的注意力分数。每个头的输出 $\text{Head}_i$ 形状为 $[batchSize, seqLen, d_k]$。
 
 **第三步：拼接与最终线性变换**
 
@@ -318,25 +318,25 @@ ReLU的**计算高效**，相比Sigmoid/Tanh，ReLU的导数计算简单（0或1
 
 <img src="https://raw.githubusercontent.com/datawhalechina/diy-llm/main/docs/chapter4/images/4-6-Per&PostNorm.png" width="800" alt="4-6-Per&PostNorm">
 
-#### 1. 位置上，Post-LN（原始论文设计，后归一化）
+#### 1. 位置上：Post-LN（原始论文设计，后归一化）
 
 **结构**：子层 -> 残差连接 -> 层归一化
 
 $$
-X = LayerNorm( X + Sublayer(x) ) 
+X = \text{LayerNorm}(X + \text{Sublayer}(X))
 $$
 
-这是原始论文的设计，后归一化方案（左侧图）：灰色残差连接流经过每个子组件后都要执行LayerNorm。而很快人们就发现，将LayerNorm移至非残差部分前端能在多方面获得更好效果（右侧图，Per-LN）。
+这是 Transformer 原始论文的设计，即后归一化方案（**左侧图**）：灰色残差连接流在通过子层后，再与输入相加，最后执行 LayerNorm。但很快人们发现，将 LayerNorm 移至残差连接之前（即预归一化）能在多方面获得更好效果（**右侧图**，Pre-LN）。
 
-#### 2. 位置上，Pre-LN（现代主流，预归一化）
+#### 2. 位置上：Pre-LN（现代主流，预归一化）
 
 **结构**：层归一化 -> 子层 -> 残差连接
 
 $$
-X =  X +  Sublayer(LayerNorm(x) ) 
+X = X + \text{Sublayer}(\text{LayerNorm}(X))
 $$
 
-它具有一些**优势**，他的**训练更稳定**，无需复杂**预热**，而且适用于**极深网络**（100+层），已成为GPT-3、PaLM等大模型的默认配置。
+它具有明显优势：**训练更稳定**，无需复杂的**学习率预热**，且适用于**极深网络**（100+ 层）。目前已成为 GPT-3、PaLM 等大模型的默认配置。
 
 <img src="https://raw.githubusercontent.com/datawhalechina/diy-llm/main/docs/chapter4/images/4-7-post&perNormData.png" width="800" alt="4-7-post&perNormData">
 
