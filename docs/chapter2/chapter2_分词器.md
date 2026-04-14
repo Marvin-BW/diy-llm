@@ -972,17 +972,26 @@ DeepSeek优化的字节级BPE词表通过对中文字词分布与代码缩进的
 
 观察DeepSeek如何处理中文短语，通常它也会使用子词或单个汉字Token来提高效率。
 ```python
-chinese_text = "注意力机制是AI的核心技术。 🚀 🚀"
+chinese_text = "hello world!注意力机制是AI的核心技术。 🚀 🚀"
 # 编码
 encoded_ids = tokenizer.encode(chinese_text, add_special_tokens=False)
 # 解码回Token字符串 (用于观察子词)
 tokens = tokenizer.convert_ids_to_tokens(encoded_ids)
+text = tokenizer.decode(encoded_ids)
 print(f"\n原文: {chinese_text}")
-print(f"编码: {tokens}")
+print(f"原始子编码: {tokens}")
+print(f"最终解码: {text}")
 print(f"IDs:{encoded_ids}")
 ```
 
-得到token字符串划分结果可能在显示上与原文有所差异这并不是编码本身出错，而是因为LLM所用的**词表**在训练过程中<ins>对某些字符或子词的覆盖不足</ins>（例如BPE训练不够充分），导致模型无法生成对应的token，从而在可读形式上看起来像“乱码”。通过增加训练语料量或进行充分的BPE训练，可以学习到更完整的token映射词表，从而解决这个问题，使中文、英文、emoji等字符都能被正确编码和解码。接下来是相应的解决办法即训练BPE：
+部分输出：
+>分词器词表大小V: 32022
+>
+>原始子编码: ['hello', 'Ġworld', '!', 'æ³¨æĦı', 'åĬĽ', 'æľºåĪ¶', 'æĺ¯', 'AI', 'çļĦ', 'æł¸å¿ĥ', 'æĬĢæľ¯', 'ãĢĤ', 'ĠðŁ', 'ļ', 'Ģ', 'ĠðŁ', 'ļ', 'Ģ']
+>
+>最终解码: hello world!注意力机制是AI的核心技术。 🚀 🚀
+
+**这种现象并非词表映射（AutoTokenizer转换正常）、覆盖异常，而是由大模型词表设计机制导致**——英文基础词汇与常用子词已被完整收录至词表中，因此通过`convert_ids_to_tokens`查看时可呈现正常可读的英文片段；而*受限于词表容量，模型无法将全部汉字逐一收录*，转而采用 **字节级编码（UTF-8 编码）** 对中文进行兜底表示，因此中文会显示为类似乱码的字节串。`convert_ids_to_tokens`仅输出模型底层的原始编码形式，需通过`decode`对结果统一解析还原，才能得到符合人类阅读习惯的正常中英文混合文本。除了加`decode`的方法，还有通过训练BPE解决这个问题：
 
 ```python
 """
