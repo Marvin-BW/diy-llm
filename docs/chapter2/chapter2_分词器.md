@@ -602,7 +602,7 @@ print(f"IDs:{encoded_ids}")
 
 > 这种方式有点像半监督学习，分词器自己在“学习怎么学习”，这样即使只看到少量对话样本，它也能找到更合适的token划分方式，让模型理解语言更高效，也更不容易被新词或少量数据难住。
 
---
+
 
 # 参考资料
 - [hugging face介绍四种分词器算法](https://huggingface.co/learn/llm-course/en/chapter6/1)
